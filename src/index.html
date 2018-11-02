@@ -4,39 +4,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/canStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>DAttendance Sign Sheet</title>
-<!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div>
-    <h1>Sign Attendance</h1>
-    <div id="studentId" class="info">
-      Student ID: <input type="text" name="studentID"><br>
-      Exam Code: <input type="text" name="examCode"><br>
-      <button type="submit" class="btn btn-primary">Sign</button>
-    </div>
-  </br>
-  </div>
-  <div class="containerCanvas">
-    <canvas>Sorry, to old to use this progam</canvas>
-  </div>
+    <h1>
+  Sign Attendance
+</h1>
+Student ID: <input type="text" name="studentID"><br>
+Exam Code: <input type="text" name="examCode"><br>
+
+<div class="wrapper">
+  <img src="https://preview.ibb.co/jnW4Qz/Grumpy_Cat_920x584.jpg" width=400 height=200 />
+  <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+</div>
+<div>
+  <button id="save">Sign</button>
+  <button id="clear">Clear</button>
+  <p id="accountAddress" class="text-center"></p>
+</div>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/signature.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/touch.js"></script>
-    <script src="js/draw.js"></script>
   </body>
 </html>
