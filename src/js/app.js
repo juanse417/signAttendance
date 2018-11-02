@@ -69,7 +69,7 @@ App = {
         attendanceInstance = instance;
 
         // Execute sign as a transaction by sending account
-        return adoptionInstance.sign(examCode, studentId, hashedSignature, time, {
+        return attendanceInstance.sign(examCode, studentId, hashedSignature, time, {
           from: account
         });
       }).then(function(result) {

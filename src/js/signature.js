@@ -5,12 +5,12 @@ var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
 var saveButton = document.getElementById('sign');
 var cancelButton = document.getElementById('clear');
 
-saveButton.addEventListener('click', function(event) {
+/*saveButton.addEventListener('click', function(event) {
   var data = signaturePad.toDataURL('image/png');
 
   // Send data to server instead...
   window.open(data);
-});
+});*/
 
 cancelButton.addEventListener('click', function(event) {
   signaturePad.clear();
