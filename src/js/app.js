@@ -53,10 +53,29 @@ App = {
     event.preventDefault();
     var examCode = parseInt(document.getElementById("codeE"));
     var studentId = parseInt(document.getElementById("sID"));
-    var hashedSignature = 'QMasdsf24'; //Missing IPFS hash and process
+    var hashedSignature; //Missing IPFS hash and process
     var time = parseInt((new Date()).getTime());
-
+    var ipfsApi = window.IpfsApi('localhost', '5001');
+    var imageData = dataURLToBlob(signaturePad.toDataURL());
     var attendanceInstance;
+    const Buffer = require('buffer')
+
+    const buf1 = Buffer.alloc(10);
+
+    let reader = new window.FileReader();
+    reader.readAsArrayBuffer(imageData);
+    const buffer = Buffer.from(reader.result);
+
+
+
+    ipfsApi.add(buffer , { progress: (prog) => console.log(`received: ${prog}`) } )
+      .then((response) => {
+        console.log(response)
+        hashedSignature = response[0].hash
+        console.log(ipfsId)
+      }).catch((err) => {
+        console.error(err)
+      });
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
