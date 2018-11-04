@@ -1,5 +1,5 @@
 {
-  "name": "pet-shop",
+  "name": "DAttendance",
   "version": "1.0.0",
   "description": "",
   "main": "truffle.js",
@@ -13,6 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "buffer": "^5.0.6",
+    "pull-file-reader": "^1.0.2",
+    "blob-to-buffer": "^1.2.8"
+  },
+  "dependencies": {
+    "blob-to-buffer": "^1.2.8",
+    "buffer": "^5.0.6",
+    "pull-file-reader": "^1.0.2"
   }
 }
