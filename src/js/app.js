@@ -58,26 +58,6 @@ App = {
     var ipfsApi = window.IpfsApi('localhost', '5001');
     var imageBlob = dataURLToBlob(signaturePad.toDataURL());
     var attendanceInstance;
-    var buffer;
-    var toBuffer = require('blob-to-buffer');
-
-    toBuffer(imageBlob, function(err, buffer) {
-      if (err) throw err
-
-      buffer[0] // => 1
-      buffer.readUInt8(1) // => 2
-    });
-
-    ipfsApi.add(buffer, {
-        progress: (prog) => console.log(`received: ${prog}`)
-      })
-      .then((response) => {
-        console.log(response)
-        hashedSignature = response[0].hash
-        console.log(ipfsId)
-      }).catch((err) => {
-        console.error(err)
-      });
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
