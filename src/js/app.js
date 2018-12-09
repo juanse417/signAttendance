@@ -59,6 +59,14 @@ App = {
     var imageBlob = dataURLToBlob(signaturePad.toDataURL());
     var attendanceInstance;
 
+
+
+    ipfsApi.add(imageBlob, (err, hashedSignature) => {
+      console.log(err, hashedSignature)
+    });
+
+
+
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
